@@ -1,16 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m, useAnimationControls } from "framer-motion";
+import { useEffect } from "react";
 import { profile } from "@/data/profile";
 
 export function ProfileHeader() {
+    const controls = useAnimationControls();
+
+    useEffect(() => {
+        controls.set({ opacity: 0, y: -20 });
+        controls.start({
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.5, ease: "easeOut" },
+        });
+    }, [controls]);
+
     return (
-        <motion.div
+        <m.div
             className="flex flex-col items-center gap-4"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
+            animate={controls}
         >
             {/* Avatar */}
             <div className="relative">
@@ -40,6 +50,6 @@ export function ProfileHeader() {
             <p className="max-w-xs text-center text-sm leading-relaxed text-light/70 whitespace-pre-line">
                 {profile.bio}
             </p>
-        </motion.div>
+        </m.div>
     );
 }
