@@ -8,7 +8,7 @@ export default function Home() {
       <div className="flex w-full max-w-md flex-col items-center gap-8">
         <ProfileHeader />
         <LinkList />
-        <Footer />
+        <Footer className="-mt-6" />
       </div>
     </main>
   );
