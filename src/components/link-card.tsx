@@ -50,7 +50,7 @@ export function LinkCard({ link, index }: LinkCardProps) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackLinkClick(link.id, link.url)}
-            className="group relative flex w-full items-center gap-5 rounded-xl border border-purple/40 bg-purple/20 px-6 py-5 transition-colors hover:border-purple/70 hover:bg-purple/30"
+            className="group relative flex w-full items-center gap-5 rounded-xl border border-purple/40 bg-purple/20 px-6 py-8 transition-colors hover:border-purple/70 hover:bg-purple/30"
             animate={controls}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
