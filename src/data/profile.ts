@@ -1,6 +1,6 @@
 export const profile = {
     name: "Nerdcave Studio",
-    bio: "Bem-vindo à minha cave!",
+    bio: "Aqui falamos de games de uma forma diferente!",
     tags: ["Streamer", "Gamer", "Content Creator"],
     avatarUrl: "/profile/mofesilva.jpeg",
     initials: "NC",
