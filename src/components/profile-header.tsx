@@ -3,13 +3,14 @@
 import Image from "next/image";
 import { m, useAnimationControls } from "framer-motion";
 import { useEffect } from "react";
-import { MonitorPlay, Gamepad2, Clapperboard } from "lucide-react";
+import { MonitorPlay, Gamepad2, Clapperboard, Pizza } from "lucide-react";
 import { profile } from "@/data/profile";
 
 const tagIcons: Record<string, React.ReactNode> = {
-    "Streamer": <MonitorPlay size={14} />,
-    "Gamer": <Gamepad2 size={14} />,
-    "Content Creator": <Clapperboard size={14} />,
+    "Streamer": <MonitorPlay size={16} />,
+    "Gamer": <Gamepad2 size={16} />,
+    "Creator": <Clapperboard size={16} />,
+    "Pizza Lover": <Pizza size={16} />,
 };
 
 export function ProfileHeader() {
@@ -49,7 +50,7 @@ export function ProfileHeader() {
             </div>
 
             {/* Name */}
-            <h1 className="text-2xl font-bold tracking-tight text-light">
+            <h1 className="text-2xl font-semibold tracking-tight text-light">
                 {profile.name}
             </h1>
 
@@ -67,7 +68,7 @@ export function ProfileHeader() {
             </div>
 
             {/* Bio */}
-            <p className="text-center text-sm text-light/50">
+            <p className="text-center text-md text-light">
                 {profile.bio}
             </p>
         </m.div>
