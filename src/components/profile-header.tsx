@@ -3,7 +3,14 @@
 import Image from "next/image";
 import { m, useAnimationControls } from "framer-motion";
 import { useEffect } from "react";
+import { MonitorPlay, Gamepad2, Clapperboard } from "lucide-react";
 import { profile } from "@/data/profile";
+
+const tagIcons: Record<string, React.ReactNode> = {
+    "Streamer": <MonitorPlay size={14} />,
+    "Gamer": <Gamepad2 size={14} />,
+    "Content Creator": <Clapperboard size={14} />,
+};
 
 export function ProfileHeader() {
     const controls = useAnimationControls();
@@ -46,8 +53,21 @@ export function ProfileHeader() {
                 {profile.name}
             </h1>
 
+            {/* Tags */}
+            <div className="flex flex-wrap justify-center gap-2">
+                {profile.tags.map((tag) => (
+                    <span
+                        key={tag}
+                        className="flex items-center gap-1.5 rounded-full border border-neon/20 bg-neon/10 px-3 py-1 text-xs font-medium text-neon/80"
+                    >
+                        {tagIcons[tag]}
+                        {tag}
+                    </span>
+                ))}
+            </div>
+
             {/* Bio */}
-            <p className="max-w-xs text-center text-sm leading-relaxed text-light/70 whitespace-pre-line">
+            <p className="text-center text-sm text-light/50">
                 {profile.bio}
             </p>
         </m.div>
