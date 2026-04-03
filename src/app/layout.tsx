@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { MotionProvider } from "@/components/motion-provider";
 import "./globals.css";
 
 const inter = Inter({
@@ -12,6 +13,10 @@ export const metadata: Metadata = {
   title: "Nerdcave | Links",
   description:
     "Todos os links da Nerdcave em um só lugar. Twitch, Kick, YouTube, Discord e mais.",
+  icons: {
+    icon: "/logos/nerdcave_3.2_perfil_green_transparent.png",
+    apple: "/logos/nerdcave_3.2_perfil_green_transparent.png",
+  },
   openGraph: {
     title: "Nerdcave | Links",
     description:
@@ -34,8 +39,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${inter.variable} h-full antialiased`}>
+      <head>
+        <noscript>
+          <style>{`[style*="opacity: 0"] { opacity: 1 !important; transform: none !important; }`}</style>
+        </noscript>
+      </head>
       <body className="min-h-full flex flex-col font-sans">
-        {children}
+        <MotionProvider>
+          {children}
+        </MotionProvider>
         <Analytics />
       </body>
     </html>
