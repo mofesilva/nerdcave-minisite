@@ -38,15 +38,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${outfit.variable} h-full overflow-hidden antialiased`}>
+    <html lang="pt-BR" className={outfit.variable}>
       <head>
         <noscript>
           <style>{`[style*="opacity: 0"] { opacity: 1 !important; transform: none !important; }`}</style>
         </noscript>
       </head>
-      <body className="h-full overflow-hidden font-sans">
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/nerdcave-wallpaper-purple-1920x1080.jpg')" }} aria-hidden="true" />
-        <div className="relative h-full overflow-y-auto flex flex-col">
+      <body className="font-sans">
+        <div className="flex min-h-svh flex-col">
           <MotionProvider>
             {children}
           </MotionProvider>
