@@ -1,7 +1,5 @@
 "use client";
 
-import { m, useAnimationControls } from "framer-motion";
-import { useEffect } from "react";
 import { type LinkItem } from "@/data/links";
 import { trackLinkClick } from "@/lib/analytics";
 import {
@@ -33,30 +31,23 @@ interface LinkCardProps {
 
 export function LinkCard({ link, index }: LinkCardProps) {
     const Icon = platformIcons[link.platform] ?? HiExternalLink;
-    const controls = useAnimationControls();
-
-    useEffect(() => {
-        controls.set({ opacity: 0, y: 20 });
-        controls.start({
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.4, delay: index * 0.07, ease: "easeOut" },
-        });
-    }, [controls, index]);
 
     return (
-        <m.a
+        <a
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackLinkClick(link.id, link.url)}
-            className="group relative flex w-full items-center gap-5 rounded-xl border border-purple/40 bg-purple/20 px-6 py-8 transition-colors hover:border-purple/70 hover:bg-purple/30"
-            animate={controls}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            className="link-card group relative flex w-full items-center gap-5 rounded-xl px-6 py-8"
+            style={{
+                animationDelay: `${index * 70}ms`,
+            }}
         >
-            {/* Glow effect on hover */}
-            <div className="absolute inset-0 -z-10 rounded-xl bg-purple/0 blur-xl transition-all duration-300 group-hover:bg-purple/10" />
+            {/* Grain overlay */}
+            <span
+                aria-hidden="true"
+                className="grain-overlay"
+            />
 
             {/* Platform icon */}
             <Icon className="h-6 w-6 shrink-0 text-neon" />
@@ -68,6 +59,6 @@ export function LinkCard({ link, index }: LinkCardProps) {
 
             {/* Arrow */}
             <HiExternalLink className="h-5 w-5 text-light/50 transition-colors group-hover:text-neon" />
-        </m.a>
+        </a>
     );
 }
