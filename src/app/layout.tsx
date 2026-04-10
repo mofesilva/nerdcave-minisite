@@ -23,12 +23,21 @@ export const metadata: Metadata = {
       "Todos os links da Nerdcave em um só lugar.",
     type: "website",
     locale: "pt_BR",
+    images: [
+      {
+        url: "/banners/website-og-banner.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Nerdcave | Links",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Nerdcave | Links",
     description:
       "Todos os links da Nerdcave em um só lugar.",
+    images: ["/banners/website-og-banner.jpg"],
   },
 };
 
