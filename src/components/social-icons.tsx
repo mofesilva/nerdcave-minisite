@@ -8,7 +8,7 @@ export function SocialIcons() {
     const socialLinks = links.filter((link) => link.section === "social");
 
     return (
-        <div className="flex items-center justify-center gap-5">
+        <div className="flex items-center justify-center gap-8">
             {socialLinks.map((link) => {
                 const Icon = platformIcons[link.platform] ?? fallbackIcon;
                 return (
@@ -21,7 +21,7 @@ export function SocialIcons() {
                         aria-label={link.title}
                         className="text-light/70 transition-colors hover:text-neon"
                     >
-                        <Icon className="h-6 w-6" />
+                        <Icon className="h-8 w-8" />
                     </a>
                 );
             })}
