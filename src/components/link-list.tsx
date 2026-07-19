@@ -4,6 +4,7 @@ import Image from "next/image";
 import { links, type LinkSection } from "@/data/links";
 import { LinkCard } from "./link-card";
 import { StreamSchedule } from "./stream-schedule";
+import { Gamertags } from "./gamertags";
 
 const sections: { id: LinkSection; title: string }[] = [
     { id: "live", title: "Ao Vivo" },
@@ -37,6 +38,8 @@ export function LinkList() {
                     </div>
                 );
             })}
+
+            <Gamertags />
 
             <div className="flex justify-center pt-2">
                 <Image
