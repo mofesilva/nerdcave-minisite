@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { MotionProvider } from "@/components/motion-provider";
 import "./globals.css";
 
-const outfit = Outfit({
+const spaceGrotesk = Space_Grotesk({
   variable: "--font-sans",
   subsets: ["latin"],
 });
@@ -47,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={outfit.variable}>
+    <html lang="pt-BR" className={spaceGrotesk.variable}>
       <head>
         <noscript>
           <style>{`[style*="opacity: 0"] { opacity: 1 !important; transform: none !important; }`}</style>

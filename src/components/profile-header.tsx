@@ -5,6 +5,7 @@ import { m, useAnimationControls } from "framer-motion";
 import { useEffect } from "react";
 import { MonitorPlay, Gamepad2, Clapperboard, Pizza } from "lucide-react";
 import { profile } from "@/data/profile";
+import { SocialIcons } from "@/components/social-icons";
 
 const tagIcons: Record<string, React.ReactNode> = {
     "Streamer": <MonitorPlay size={16} />,
@@ -71,6 +72,9 @@ export function ProfileHeader() {
             <p className="text-center text-md text-light">
                 {profile.bio}
             </p>
+
+            {/* Social icons */}
+            <SocialIcons />
         </m.div>
     );
 }
