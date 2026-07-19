@@ -8,7 +8,6 @@ import { StreamSchedule } from "./stream-schedule";
 const sections: { id: LinkSection; title: string }[] = [
     { id: "live", title: "Ao Vivo" },
     { id: "community", title: "Comunidade" },
-    { id: "social", title: "Redes Sociais" },
 ];
 
 const indexedLinks = links.map((link, index) => ({ link, index }));

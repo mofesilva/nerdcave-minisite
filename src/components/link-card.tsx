@@ -2,27 +2,7 @@
 
 import { type LinkItem } from "@/data/links";
 import { trackLinkClick } from "@/lib/analytics";
-import {
-    SiTwitch,
-    SiKick,
-    SiYoutube,
-    SiDiscord,
-    SiThreads,
-    SiInstagram,
-    SiTiktok,
-} from "react-icons/si";
-import { HiExternalLink } from "react-icons/hi";
-import type { IconType } from "react-icons";
-
-const platformIcons: Record<string, IconType> = {
-    twitch: SiTwitch,
-    kick: SiKick,
-    youtube: SiYoutube,
-    discord: SiDiscord,
-    threads: SiThreads,
-    instagram: SiInstagram,
-    tiktok: SiTiktok,
-};
+import { platformIcons, fallbackIcon } from "@/lib/platform-icons";
 
 interface LinkCardProps {
     link: LinkItem;
@@ -30,7 +10,7 @@ interface LinkCardProps {
 }
 
 export function LinkCard({ link, index }: LinkCardProps) {
-    const Icon = platformIcons[link.platform] ?? HiExternalLink;
+    const Icon = platformIcons[link.platform] ?? fallbackIcon;
 
     return (
         <a
