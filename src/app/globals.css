@@ -125,14 +125,14 @@
   .link-card {
     opacity: 0;
     animation: card-in 0.4s ease-out forwards;
-    background: rgba(42, 47, 63, 0.92);
+    background: rgba(60, 44, 82, 0.92);
     border: 1px solid rgba(110, 95, 166, 0.5);
     transition: background 0.2s ease, border-color 0.2s ease, scale 0.2s ease;
   }
 
   .link-card:hover {
     scale: 1.02;
-    background: rgba(53, 58, 77, 0.95) !important;
+    background: rgba(73, 55, 98, 0.95) !important;
     border-color: rgba(110, 95, 166, 0.8) !important;
   }
 
