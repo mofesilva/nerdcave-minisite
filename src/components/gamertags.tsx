@@ -25,7 +25,7 @@ export function Gamertags() {
                             <span aria-hidden="true" className="grain-overlay" />
 
                             <Icon className="relative h-5 w-5 shrink-0 text-neon" />
-                            <div className="relative flex flex-col overflow-hidden">
+                            <div className="relative flex flex-col overflow-hidden text-left">
                                 <span className="truncate text-[9px] uppercase tracking-wide text-light/40">
                                     {entry.label}
                                 </span>
@@ -36,7 +36,7 @@ export function Gamertags() {
                         </>
                     );
                     const className =
-                        "link-card relative flex h-20 w-full items-center gap-2 rounded-xl px-3";
+                        "link-card relative flex h-20 w-full flex-col items-start justify-center gap-1.5 rounded-xl px-3";
                     const style = { animationDelay: `${i * 70}ms` };
 
                     return entry.url ? (
