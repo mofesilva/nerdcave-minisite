@@ -3,10 +3,10 @@ export interface LinkItem {
     title: string;
     url: string;
     platform: string;
-    /** Renders as a large hero card instead of a compact grid tile. */
-    featured?: boolean;
-    /** Hex color used for the icon and the card's ambient glow. */
+    /** Hex color used for the icon. */
     accent?: string;
+    /** Grid footprint in the bento layout. Defaults to a 1x1 tile. */
+    span?: { col?: 1 | 2; row?: 1 | 2 };
 }
 
 export const links: LinkItem[] = [
@@ -15,23 +15,22 @@ export const links: LinkItem[] = [
         title: "Twitch",
         url: "https://www.twitch.tv/nerdcave_studio",
         platform: "twitch",
-        featured: true,
         accent: "#9146FF",
+        span: { col: 2 },
     },
     {
         id: "youtube",
         title: "YouTube",
         url: "https://www.youtube.com/@nerdcave.studio",
         platform: "youtube",
-        featured: true,
         accent: "#FF0000",
+        span: { row: 2 },
     },
     {
         id: "discord",
         title: "Discord",
         url: "https://discord.com/invite/HcpuEmYcmt",
         platform: "discord",
-        featured: true,
         accent: "#5865F2",
     },
     {
@@ -61,5 +60,6 @@ export const links: LinkItem[] = [
         url: "https://www.tiktok.com/@nerdcave.studio",
         platform: "tiktok",
         accent: "#FF0050",
+        span: { col: 2 },
     },
 ];
