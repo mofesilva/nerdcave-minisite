@@ -21,7 +21,7 @@ export function SocialIcons() {
                         aria-label={link.title}
                         className="text-light/70 transition-colors hover:text-neon"
                     >
-                        <Icon className="h-8 w-8" />
+                        <Icon className="h-6 w-6" />
                     </a>
                 );
             })}

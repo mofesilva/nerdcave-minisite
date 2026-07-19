@@ -38,13 +38,6 @@ export const links: LinkItem[] = [
         section: "community",
     },
     {
-        id: "threads",
-        title: "Threads",
-        url: "https://www.threads.com/@nerdcave.studio",
-        platform: "threads",
-        section: "social",
-    },
-    {
         id: "instagram",
         title: "Instagram",
         url: "https://www.instagram.com/nerdcave.studio/",
@@ -56,6 +49,13 @@ export const links: LinkItem[] = [
         title: "TikTok",
         url: "https://www.tiktok.com/@nerdcave.studio",
         platform: "tiktok",
+        section: "social",
+    },
+    {
+        id: "threads",
+        title: "Threads",
+        url: "https://www.threads.com/@nerdcave.studio",
+        platform: "threads",
         section: "social",
     },
 ];
