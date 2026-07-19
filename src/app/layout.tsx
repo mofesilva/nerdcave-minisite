@@ -54,6 +54,7 @@ export default function RootLayout({
         </noscript>
       </head>
       <body className="font-sans">
+        <div aria-hidden="true" className="app-background" />
         <div className="flex min-h-svh flex-col">
           <MotionProvider>
             {children}

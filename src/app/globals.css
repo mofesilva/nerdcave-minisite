@@ -98,15 +98,20 @@
 
   body {
     @apply text-foreground;
-    background-image: url('/nerdcave-wallpaper-purple-1920x1080.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
     background-color: #232734;
   }
 }
 
 @layer utilities {
+  .app-background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image: url('/nerdcave-wallpaper-purple-1920x1080.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
   @keyframes card-in {
     from {
       opacity: 0;
