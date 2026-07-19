@@ -16,7 +16,7 @@ export function Gamertags() {
                 Gamertags
             </h2>
 
-            <div className="flex flex-col gap-3">
+            <div className="grid grid-cols-3 gap-3">
                 {gamertags.map((entry, i) => {
                     const Icon = gamertagIcons[entry.platform];
                     const inner = (
@@ -24,19 +24,19 @@ export function Gamertags() {
                             {/* Grain overlay */}
                             <span aria-hidden="true" className="grain-overlay" />
 
-                            <Icon className="relative h-6 w-6 shrink-0 text-neon" />
-                            <div className="relative flex flex-col">
-                                <span className="text-[10px] uppercase tracking-wide text-light/40">
+                            <Icon className="relative h-5 w-5 shrink-0 text-neon" />
+                            <div className="relative flex flex-col overflow-hidden">
+                                <span className="truncate text-[9px] uppercase tracking-wide text-light/40">
                                     {entry.label}
                                 </span>
-                                <span className="text-sm font-medium text-light/90">
+                                <span className="truncate text-xs font-medium text-light/90">
                                     {entry.nick}
                                 </span>
                             </div>
                         </>
                     );
                     const className =
-                        "link-card relative flex w-full items-center gap-4 rounded-xl px-6 py-4";
+                        "link-card relative flex h-20 w-full items-center gap-2 rounded-xl px-3";
                     const style = { animationDelay: `${i * 70}ms` };
 
                     return entry.url ? (
